@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import StreamCreate from './streams/StreamCreate';
 import StreamShow from './streams/StreamShow';
 import StreamList from './streams/StreamList';
 import StreamDelete from './streams/StreamDelete';
 import StreamEdit from './streams/StreamEdit';
+import Header from './Header';
 // BrowserRouter will look up the router, if not found, not return 404, but index.html, that how create-react-app works
 // HashRouter will always return index.html and ignore the router after # tag
 
@@ -18,9 +19,11 @@ import StreamEdit from './streams/StreamEdit';
 
 const App = () => {
   return (
-    <div>
+    <div className="ui container">
       <BrowserRouter>
+        <Header />
         <div>
+          {/* <Header /> */}
           <Route path="/" exact component={StreamList} />
           <Route path="/streams/new" component={StreamCreate} />
           <Route path="/streams/edit" component={StreamEdit} />
