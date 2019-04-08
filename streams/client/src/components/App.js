@@ -25,12 +25,12 @@ const App = () => {
       <Router history={history}>
         <Header />
         <div>
-          {/* <Header /> */}
+          {/* with react-router, each component needs to be designed to work in isolation (fetch its own data) */}
           <Route path="/" exact component={StreamList} />
-          <Route path="/streams/new" component={StreamCreate} />
-          <Route path="/streams/edit" component={StreamEdit} />
-          <Route path="/streams/delete" component={StreamDelete} />
-          <Route path="/streams/show" component={StreamShow} />
+          <Route path="/streams/new" exact component={StreamCreate} />
+          <Route path="/streams/edit/:id" exact component={StreamEdit} />
+          <Route path="/streams/delete" exact component={StreamDelete} />
+          <Route path="/streams/show" exact component={StreamShow} />
         </div>
       </Router>
     </div>
